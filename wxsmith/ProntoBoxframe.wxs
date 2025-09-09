@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="ProntoBoxFrame">
+		<title>ProntoBox</title>
+		<centered>1</centered>
+		<size>1080,720</size>
+		<id_arg>0</id_arg>
+		<object class="wxNotebook" name="ID_NOTEBOOK1" subclass="wxSimplebook" variable="MainSimplebook" member="yes">
+			<pos>184,208</pos>
+			<size>104,96</size>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_DASHBOARDPANEL" variable="DashboardPanel" member="yes">
+					<style>wxTAB_TRAVERSAL|wxFULL_REPAINT_ON_RESIZE</style>
+					<handler function="OnDashboardPanelPaint" entry="EVT_PAINT" />
+				</object>
+				<label>Dashboard</label>
+				<selected>1</selected>
+			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_CLIENTPANEL" variable="ClientPanel" member="yes">
+					<object class="wxBoxSizer" variable="ClientSizer" member="no">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<object class="wxListView" name="ID_LISTVIEW1" variable="ClientListView" member="yes" />
+							<flag>wxALL|wxEXPAND</flag>
+							<border>5</border>
+							<option>1</option>
+						</object>
+						<object class="sizeritem">
+							<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+								<object class="sizeritem">
+									<object class="wxButton" name="ID_BUTTONCLIENTINSERT" variable="ClientInsertButton" member="yes">
+										<label>Inserir</label>
+									</object>
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+							</object>
+							<flag>wxALL|wxALIGN_RIGHT</flag>
+							<border>5</border>
+						</object>
+					</object>
+				</object>
+				<label>Clients</label>
+			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANELCASH" variable="TransactionsPanel" member="yes">
+					<object class="wxBoxSizer" variable="TransactionsPanelBoxSizer" member="no">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<object class="wxDataViewListCtrl" name="ID_TRANSACTIONDATAVIEW" subclass="TransactionListView" variable="TransactionDataView" member="yes">
+								<style>wxDV_ROW_LINES|wxDV_VERT_RULES</style>
+								<handler function="OnTransactionDataViewRowSelected" entry="EVT_DATAVIEW_SELECTION_CHANGED" />
+							</object>
+							<flag>wxALL|wxEXPAND</flag>
+							<border>5</border>
+							<option>1</option>
+						</object>
+						<object class="sizeritem">
+							<object class="wxBoxSizer" variable="BottomBoxSizer" member="no">
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BalanceBoxSizer" member="no">
+										<object class="sizeritem">
+											<object class="wxStaticText" name="ID_BALANCELABEL" variable="BalanceLabel" member="yes">
+												<label>Saldo Atual</label>
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+										</object>
+										<object class="sizeritem">
+											<object class="wxTextCtrl" name="ID_BALANCECTRL" variable="BalanceCtrl" member="yes">
+												<value>R$</value>
+												<style>wxTE_READONLY|wxTE_RIGHT</style>
+											</object>
+											<flag>wxALL|wxEXPAND</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="spacer">
+									<flag>wxALL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="ControlBoxSizer" member="no">
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTONTRANSACTIONEDIT" variable="TransactionsEditButton" member="yes">
+												<label>Editar</label>
+												<enabled>0</enabled>
+												<handler function="OnTransactionsEditButtonClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTONTRANSACTIONDELETE" variable="TransactionsDeleteButton" member="yes">
+												<label>Apagar</label>
+												<enabled>0</enabled>
+												<handler function="OnTransactionsDeleteButtonClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxButton" name="ID_BUTTONTRANSACTIONINSERT" variable="TransactionsInsertButton" member="yes">
+												<label>Novo...</label>
+												<handler function="OnTransactionInsertClick" entry="EVT_BUTTON" />
+											</object>
+											<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>5</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+							</object>
+							<flag>wxALL|wxEXPAND</flag>
+							<border>5</border>
+						</object>
+					</object>
+				</object>
+				<label>Transactions</label>
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="MenuBar" member="no">
+			<object class="wxMenu" variable="MenuFile" member="no">
+				<label>Arquivos</label>
+				<object class="wxMenuItem" name="idMenuQuit" variable="MenuFileItemQuit" member="no">
+					<label>Sair</label>
+					<accel>Alt-F4</accel>
+					<help>Quit the application</help>
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="MenuHelp" member="no">
+				<label>Ajuda</label>
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuHelpItemAbout" member="no">
+					<label>Sobre</label>
+					<accel>F1</accel>
+					<help>Show info about this application</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxToolBar" name="ID_TOOLBAR" variable="ToolBar" member="yes">
+			<bitmapsize>32,32</bitmapsize>
+			<style>wxTB_FLAT|wxTB_TEXT|wxBORDER_SIMPLE|wxBORDER_RAISED|wxBORDER_STATIC|wxTAB_TRAVERSAL</style>
+			<object class="tool" name="ID_TOOLBARHOME" variable="ToolBarItem6" member="yes">
+				<label>Início</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\home.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="ID_TOOLBARSO" variable="ToolBarItem2" member="yes">
+				<label>Ordens</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\orders.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="ID_TOOLBARCLIENTS" variable="ToolBarItem1" member="yes">
+				<label>Clientes</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\client.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="separator" />
+			<object class="tool" name="ID_TOOLBARSERVICES" variable="ToolBarItem3" member="yes">
+				<label>Serviços</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\services.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="ID_TOOLBARCASH" variable="ToolBarItem4" member="yes">
+				<label>Caixa</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\cash.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+			<object class="tool" name="ID_TOOLBAREQUIP" variable="ToolBarItem5" member="yes">
+				<label>Equipamento</label>
+				<bitmap>C:\Users\Wellington Júnior\Documents\Projetos\ProntoBox\resources\icons\equipament.png</bitmap>
+				<handler function="OnToolBarClicked" entry="EVT_TOOL" />
+			</object>
+		</object>
+	</object>
+</wxsmith>
