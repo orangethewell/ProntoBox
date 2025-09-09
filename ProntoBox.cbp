@@ -174,7 +174,11 @@
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>
-		<Unit filename="widgets/TransactionListView.h">
+		<Unit filename="widgets/ClientListView.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="widgets/TransactionDataListView.h">
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>
